@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  background: #ffffff;
+  color: #0f172a;
+}
+h2 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.domain {
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  margin-bottom: 16px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  flex: 1;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.primary {
+  background: #0f172a;
+  color: white;
+}
+.secondary {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.muted {
+  color: #64748b;
+  font-size: 11px;
+  margin-top: 10px;
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup-style.css" />
+  </head>
+  <body>
+    <h1>Continuum <span id="badge"></span></h1>
+    <div class="card" id="currentCard">
+      <div class="row" style="justify-content: space-between">
+        <div>
+          <div
+            style="
+              font-weight: 700;
+              font-size: 12px;
+              max-width: 230px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+            id="currTitle"
+          >
+            Loading...
+          </div>
+          <div
+            class="muted"
+            id="currDomain"
+            style="max-width: 230px; overflow: hidden; text-overflow: ellipsis"
+          ></div>
+        </div>
+        <div class="dot" id="trackDot" style="background: #cbd5e1"></div>
+      </div>
+      <div class="durations" id="durBtns">
+        <button data-m="5">5m</button>
+        <button data-m="10" class="active">10m</button>
+        <button data-m="30">30m</button>
+        <button data-m="custom">Custom</button>
+      </div>
+      <div id="customRow" style="display: none" class="row">
+        <input type="number" id="customMin" min="1" max="240" value="15" />
+        <span class="muted">minutes</span>
+      </div>
+      <div class="row" style="margin-top: 8px">
+        <button class="btn primary" id="trackBtn">Track this tab</button>
+        <button class="btn ghost" id="optionsBtn" style="flex: 0">⚙</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div
+        class="row"
+        style="justify-content: space-between; margin-bottom: 6px"
+      >
+        <strong style="font-size: 12px"
+          >Active Tasks (<span id="taskCount">0</span>)</strong
+        >
+        <button class="ghost" style="font-size: 11px" id="clearAll">
+          Clear all
+        </button>
+      </div>
+      <div id="taskList">
+        <div id="empty">
+          No tasks yet.<br /><span class="muted"
+            >Track a tab, switch away, you'll be reminded</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="muted" style="font-size: 10px; text-align: center">
+      If no popup appears: check chrome://settings → Privacy → Notifications →
+      Allow this extension, and check OS notification settings. Popup window
+      always shows as fallback.
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

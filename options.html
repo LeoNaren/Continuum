@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Continuum Options</title>
+<link rel="stylesheet" href="options-style.css">
+</head>
+<body>
+<h1>Continuum Settings v1.1</h1>
+<div class="sub">Fixed: now shows BOTH notification + popup window. Test with 10s button in popup.</div>
+
+<div class="card">
+  <label>Always track these domains (e.g. github.com, notion.so)</label>
+  <div class="row">
+    <input id="domainInput" placeholder="github.com">
+    <button class="btn primary" id="addDomain">Add</button>
+  </div>
+  <div id="domainList"></div>
+  <div class="muted" style="margin-top:8px">Subdomains included. github.com matches gist.github.com</div>
+</div>
+
+<div class="card">
+  <label>Global default reminder time</label>
+  <select id="defaultMin">
+    <option value="5">5 minutes</option>
+    <option value="10">10 minutes</option>
+    <option value="30">30 minutes</option>
+    <option value="60">60 minutes</option>
+  </select>
+  <label>Cooldown after "Finished"</label>
+  <select id="cooldownMin">
+    <option value="30">30 minutes</option>
+    <option value="60">60 minutes</option>
+    <option value="120">2 hours</option>
+    <option value="0">No cooldown</option>
+  </select>
+  <label style="margin-top:12px"><input type="checkbox" id="idleCheck"> Detect idle / prolonged inactivity as leaving</label>
+</div>
+
+<div class="card">
+  <h3 style="margin:0 0 8px">Debug if still no popup</h3>
+  <ol class="muted" style="line-height:1.6">
+    <li>Go to chrome://extensions → TaskRecall → <b>Service Worker</b> → Inspect → Console. You should see [TaskRecall] START / ALARM logs.</li>
+    <li>Check chrome://settings/content/notifications → Allow sites to send notifications.</li>
+    <li>On Windows/Mac, check OS notification settings allow Chrome notifications.</li>
+    <li>Popup window fallback should ALWAYS show even if notifications are blocked. If not, check if popups are blocked for chrome-extension:// URLs.</li>
+    <li>Use the ⚡ Test nudge button in extension popup – it fires in 10 seconds. Switch tabs immediately after clicking.</li>
+  </ol>
+  <button class="btn secondary" id="saveBtn">Save settings</button>
+  <span id="saved" style="margin-left:10px;color:#22c55e;display:none">Saved!</span>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
